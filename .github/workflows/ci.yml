@@ -1,0 +1,13 @@
+name: My First CI/CD
+
+on: [push]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Print message
+        run: echo "🚀 Это работает на GitHub Actions!"
+      - name: Show date
+        run: date
