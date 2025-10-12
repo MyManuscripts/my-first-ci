@@ -1,4 +1,4 @@
-name: Java CI with Maven
+name: Java CI with Maven and Docker
 
 on: [push, pull_request]
 
@@ -27,3 +27,10 @@ jobs:
 
       - name: Run tests
         run: mvn test
+
+      # === НОВЫЕ ШАГИ: Docker ===
+      - name: Build Docker image
+        run: docker build -t my-java-app .
+
+      - name: Run app in Docker (smoke test)
+        run: docker run my-java-app
