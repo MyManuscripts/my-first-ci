@@ -1,5 +1,5 @@
 # Используем OpenJDK 11 как базовый образ
-FROM openjdk:21-jre-slim
+FROM eclipse-temurin:21-jre-alpine
 
 # Копируем JAR-файл (создастся после сборки Maven)
 COPY target/java-ci-demo-1.0-SNAPSHOT.jar app.jar
